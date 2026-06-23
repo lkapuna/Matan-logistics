@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20260623-2" />
   </head>
   <body>
     <header class="site-header" aria-label="ניווט ראשי">
@@ -37,7 +37,7 @@
       <section class="hero" aria-label="מתן לוגיסטיקה">
         <img
           class="hero-image"
-          src="assets/matan-logistics-hero.png"
+          src="assets/matan-logistics-hero.png?v=20260623-2"
           alt="רכבי שילוח, משאית קירור ושליח קטנוע במרכז לוגיסטי"
         />
         <div class="hero-overlay"></div>
@@ -66,27 +66,65 @@
           <h2>מערכי שילוח יומיים לרשתות, מסעדות ומשרדים.</h2>
         </div>
         <div class="client-list" aria-label="לוגואים של לקוחות">
-          <figure class="client-logo-card arcaffe-logo" aria-label="Arcaffe">
-            <span>ARCAFFE</span>
+          <figure class="client-logo-card" aria-label="Arcaffe">
+            <svg class="client-logo-svg" viewBox="0 0 240 92" role="img" aria-label="Arcaffe">
+              <text x="96" y="58" text-anchor="middle" class="arcaffe-word">ARCAFFE</text>
+              <g class="arcaffe-bean" transform="translate(174 20)">
+                <path d="M18 8c21 5 34 19 30 36-3 13-16 22-32 20C7 63 0 56 2 46 5 29 17 21 18 8Z" />
+                <path d="M18 9c-3 19 4 39 29 45" />
+                <path d="M20 0v16M31 2l-3 17M42 7l-7 16" />
+              </g>
+            </svg>
           </figure>
-          <figure class="client-logo-card jems-logo" aria-label="JEMS Beer Factory">
-            <span class="jems-mark" aria-hidden="true"></span>
-            <span>JEM'S</span>
-            <small>BEER FACTORY</small>
+          <figure class="client-logo-card jems-card" aria-label="JEMS Beer Factory">
+            <svg class="client-logo-svg" viewBox="0 0 240 92" role="img" aria-label="JEMS Beer Factory">
+              <rect x="12" y="10" width="216" height="72" rx="8" />
+              <g class="jems-sun" transform="translate(120 25)">
+                <circle r="11" />
+                <path d="M0-22v8M15-15l-6 6M22 0h-8M15 15l-6-6M0 22v-8M-15 15l6-6M-22 0h8M-15-15l6 6" />
+              </g>
+              <text x="120" y="58" text-anchor="middle" class="jems-word">JEM'S</text>
+              <text x="120" y="77" text-anchor="middle" class="jems-sub">BEER FACTORY</text>
+            </svg>
           </figure>
-          <figure class="client-logo-card refresh-logo" aria-label="Refresh Supermarket">
-            <span>refresh</span>
-            <small>SUPERMARKET</small>
+          <figure class="client-logo-card" aria-label="Refresh Supermarket">
+            <svg class="client-logo-svg" viewBox="0 0 240 92" role="img" aria-label="Refresh Supermarket">
+              <path class="refresh-leaf" d="M91 15c26-13 54-6 66 3-25 4-43 17-56 39-10-10-14-25-10-42Z" />
+              <text x="120" y="58" text-anchor="middle" class="refresh-word">refresh</text>
+              <text x="120" y="78" text-anchor="middle" class="refresh-sub">SUPERMARKET</text>
+            </svg>
           </figure>
-          <figure class="client-logo-card matuka-logo" aria-label="מתוקה">
-            <span>מתוקה</span>
+          <figure class="client-logo-card" aria-label="מתוקה">
+            <svg class="client-logo-svg" viewBox="0 0 240 92" role="img" aria-label="מתוקה">
+              <g class="matuka-flower" transform="translate(62 25)">
+                <circle cx="0" cy="-13" r="13" />
+                <circle cx="12" cy="0" r="13" />
+                <circle cx="0" cy="13" r="13" />
+                <circle cx="-12" cy="0" r="13" />
+                <circle cx="0" cy="0" r="9" />
+              </g>
+              <text x="140" y="58" text-anchor="middle" class="matuka-word">מתוקה</text>
+              <text x="140" y="75" text-anchor="middle" class="matuka-sub">קונדיטוריה איכותית</text>
+            </svg>
           </figure>
-          <figure class="client-logo-card dror-logo" aria-label="דרור כלי עבודה">
-            <span>דרור</span>
-            <small>כלי עבודה</small>
+          <figure class="client-logo-card" aria-label="דרור כלי עבודה">
+            <svg class="client-logo-svg" viewBox="0 0 240 92" role="img" aria-label="דרור כלי עבודה">
+              <rect x="30" y="20" width="180" height="52" rx="5" class="dror-box" />
+              <path class="dror-tool" d="M58 64l32-32 12 12-32 32zM88 31l9-9 17 17-9 9z" />
+              <text x="140" y="55" text-anchor="middle" class="dror-word">דרור</text>
+              <text x="140" y="73" text-anchor="middle" class="dror-sub">כלי עבודה</text>
+            </svg>
           </figure>
-          <figure class="client-logo-card zer4u-logo" aria-label="ZER4U">
-            <span>ZER4U</span>
+          <figure class="client-logo-card" aria-label="ZER4U">
+            <svg class="client-logo-svg" viewBox="0 0 240 92" role="img" aria-label="ZER4U">
+              <g class="zer-flower" transform="translate(55 43)">
+                <ellipse rx="9" ry="18" transform="rotate(0)" />
+                <ellipse rx="9" ry="18" transform="rotate(60)" />
+                <ellipse rx="9" ry="18" transform="rotate(120)" />
+                <circle r="8" />
+              </g>
+              <text x="140" y="58" text-anchor="middle" class="zer-word">ZER4U</text>
+            </svg>
           </figure>
         </div>
       </section>
@@ -264,6 +302,6 @@
       <a href="#top">חזרה למעלה</a>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260623-2"></script>
   </body>
 </html>
