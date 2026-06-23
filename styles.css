@@ -24,6 +24,8 @@ body {
   font-family: "Heebo", Arial, sans-serif;
   background: var(--paper);
   color: var(--ink);
+  direction: rtl;
+  text-align: right;
   line-height: 1.6;
 }
 
@@ -39,6 +41,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  direction: rtl;
   gap: 20px;
   padding: 16px clamp(18px, 4vw, 56px);
   background: rgba(255, 255, 255, 0.9);
@@ -49,6 +52,8 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
+  direction: rtl;
+  text-align: right;
   gap: 12px;
   min-width: max-content;
 }
@@ -83,6 +88,8 @@ a {
 .main-nav {
   display: flex;
   align-items: center;
+  direction: rtl;
+  text-align: right;
   gap: clamp(16px, 3vw, 32px);
   color: #263746;
   font-weight: 600;
@@ -162,8 +169,11 @@ a {
 
 .hero-content {
   position: relative;
+  justify-self: end;
   width: min(760px, 100%);
   padding-top: 18px;
+  direction: rtl;
+  text-align: right;
 }
 
 .eyebrow,
@@ -240,6 +250,7 @@ a {
 .trust-strip p {
   margin: 0;
   font-weight: 800;
+  text-align: right;
 }
 
 .client-list {
@@ -247,21 +258,54 @@ a {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: flex-end;
+  align-items: center;
 }
 
-.client-list span {
-  padding: 10px 16px;
+.client-logo-card {
+  display: grid;
+  place-items: center;
+  width: clamp(128px, 14vw, 178px);
+  height: 74px;
+  margin: 0;
+  padding: 14px 18px;
   border-radius: 8px;
-  background: #eef5f2;
-  color: #234;
-  font-weight: 800;
+  background: #f4f8f6;
+  border: 1px solid var(--line);
+  filter: grayscale(1);
+  opacity: 0.76;
+  transition: filter 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+.client-logo-card:hover {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.client-logo-card img {
+  display: block;
+  width: 100%;
+  max-height: 44px;
+  object-fit: contain;
 }
 
 .intro-section {
   display: grid;
+  direction: rtl;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: clamp(28px, 6vw, 80px);
   background: var(--paper);
+}
+
+.intro-text,
+.contact-copy,
+.promise-grid article,
+.service-card,
+.testimonial-grid blockquote,
+.process-list li,
+.lead-form {
+  direction: rtl;
+  text-align: right;
 }
 
 .intro-text h2,
@@ -330,8 +374,11 @@ a {
 
 .section-heading {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-start;
+  direction: rtl;
+  text-align: right;
   gap: 28px;
   margin-bottom: 34px;
 }
@@ -447,6 +494,28 @@ a {
   padding: 14px 16px;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.1);
+}
+
+.direct-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 18px;
+  direction: rtl;
+  text-align: right;
+}
+
+.direct-contact a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  font-weight: 800;
 }
 
 .lead-form {

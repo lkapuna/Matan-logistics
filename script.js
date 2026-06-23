@@ -1,4 +1,4 @@
-const contactEmail = "office@matan-logistics.co.il";
+const contactEmail = "lkapuna@gmail.com";
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
