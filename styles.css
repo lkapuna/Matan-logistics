@@ -914,6 +914,7 @@ a {
 
   .site-footer {
     display: block;
+    text-align: center;
   }
 
   .site-footer a {
