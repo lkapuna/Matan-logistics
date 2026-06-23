@@ -239,54 +239,170 @@ a {
 }
 
 .trust-strip {
-  display: flex;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  background: var(--white);
-  border-bottom: 1px solid var(--line);
+  gap: clamp(24px, 5vw, 72px);
+  padding-top: clamp(42px, 6vw, 72px);
+  padding-bottom: clamp(42px, 6vw, 72px);
+  background:
+    linear-gradient(180deg, #0c2542 0, #102d4d 44%, #f7f9fb 44%, #f7f9fb 100%);
+  border-bottom: 0;
 }
 
-.trust-strip p {
+.trust-strip::before {
+  content: "";
+  position: absolute;
+  inset: clamp(28px, 4vw, 48px) clamp(18px, 6vw, 88px);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  pointer-events: none;
+}
+
+.trust-copy,
+.client-list {
+  position: relative;
+  z-index: 1;
+}
+
+.trust-copy {
+  padding: clamp(18px, 2vw, 26px) 0;
+}
+
+.trust-copy h2 {
   margin: 0;
-  font-weight: 800;
+  max-width: 520px;
+  color: var(--ink);
+  font-size: clamp(1.65rem, 2.8vw, 2.6rem);
+  line-height: 1.08;
   text-align: right;
 }
 
 .client-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: flex-end;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
 }
 
 .client-logo-card {
   display: grid;
+  align-content: center;
   place-items: center;
-  width: clamp(128px, 14vw, 178px);
-  height: 74px;
+  min-height: 116px;
   margin: 0;
-  padding: 14px 18px;
+  padding: 20px 18px;
   border-radius: 8px;
-  background: #f4f8f6;
-  border: 1px solid var(--line);
-  filter: grayscale(1);
-  opacity: 0.76;
-  transition: filter 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+  background: #f8fafb;
+  border: 1px solid #e3ebef;
+  color: #162330;
+  opacity: 0.86;
+  transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
 
 .client-logo-card:hover {
-  filter: grayscale(0);
   opacity: 1;
+  border-color: #cbd8df;
   transform: translateY(-2px);
 }
 
-.client-logo-card img {
+.client-logo-card span,
+.client-logo-card small {
   display: block;
-  width: 100%;
-  max-height: 44px;
-  object-fit: contain;
+  direction: ltr;
+  text-align: center;
+}
+
+.arcaffe-logo span {
+  color: #c92c34;
+  font-family: Impact, "Arial Black", Arial, sans-serif;
+  font-size: clamp(1.55rem, 2.1vw, 2.15rem);
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.jems-logo {
+  gap: 2px;
+}
+
+.jems-logo span:not(.jems-mark) {
+  color: #151515;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(1.75rem, 2.5vw, 2.45rem);
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.jems-logo small {
+  color: #222;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.jems-mark {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 2px;
+  border: 3px solid #151515;
+  border-radius: 50%;
+  box-shadow:
+    0 -10px 0 -8px #151515,
+    12px -7px 0 -9px #151515,
+    -12px -7px 0 -9px #151515;
+}
+
+.refresh-logo span {
+  color: #a6d72c;
+  font-family: "Arial Rounded MT Bold", Arial, Helvetica, sans-serif;
+  font-size: clamp(1.75rem, 2.6vw, 2.5rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.refresh-logo small {
+  margin-top: 6px;
+  color: #2e8b26;
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+
+.matuka-logo span {
+  color: #b07445;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.7rem, 2.4vw, 2.3rem);
+  font-weight: 800;
+}
+
+.dror-logo {
+  gap: 4px;
+}
+
+.dror-logo span {
+  color: #e1aa10;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(1.85rem, 2.6vw, 2.5rem);
+  font-weight: 900;
+  line-height: 1;
+  text-shadow: 1px 1px 0 #1b1b1b;
+}
+
+.dror-logo small {
+  color: #1b1b1b;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.zer4u-logo span {
+  color: #3c4630;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(1.65rem, 2.5vw, 2.35rem);
+  font-weight: 900;
+  letter-spacing: 1px;
 }
 
 .intro-section {
@@ -621,7 +737,7 @@ a {
   }
 
   .client-list {
-    justify-content: flex-start;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     margin-top: 18px;
   }
 
@@ -675,6 +791,15 @@ a {
   .process-list,
   .lead-form {
     grid-template-columns: 1fr;
+  }
+
+  .client-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .client-logo-card {
+    min-height: 96px;
+    padding: 16px 12px;
   }
 
   .hero-metrics span {
